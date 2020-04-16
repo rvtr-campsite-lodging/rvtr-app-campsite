@@ -1,11 +1,15 @@
+/*
+represnts a location object. 
+LocationId - Location Identifier, CultureInfo - Culture info for localiztion
+*/
 export class Location{
-    LocationId : number;  // Location Identifier
-    Address1 : string;    // Address line 1
-    Address2 : string;    // Address line 2
-    City : string;        // City
-    State : string;       // State
-    Zip : string;         // Zip Code
-    Latitude : number;    // Latitiude
-    Longitude : number;   // Longitude
-    CultureInfo : string; // Culture info for localiztion
+    LocationId: number;  
+    Address1: string;    
+    Address2: string;    
+    City: string;        
+    State: string;       
+    Zip: string;         
+    Latitude: number;    
+    Longitude: number;   
+    CultureInfo: string; 
   }

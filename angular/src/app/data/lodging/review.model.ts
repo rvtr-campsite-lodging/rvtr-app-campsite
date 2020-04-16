@@ -1,8 +1,12 @@
+/* 
+Represents a review oject. userId: user identifier, hitelId: hotel identifier, userName :reviewr's username
+rating: given rating, content: content of the review, date: date review posted
+*/
 export class Review {
-  userId : number; // user identifier 
-  hotelId : number; // hotel identifier
-  userName : string; // reviewr's username
-  rating : number; // given rating
-  content : string; // content of the review
-  date : Date; // date review posted
+  userId: number;
+  hotelId: number;
+  userName: string;
+  rating: number;
+  content: string;
+  date: Date;
 }
