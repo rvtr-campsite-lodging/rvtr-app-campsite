@@ -1,7 +1,7 @@
-/*
+/**
 represnts a location object. 
 LocationId - Location Identifier, CultureInfo - Culture info for localiztion
-*/
+**/
 export class Location{
     LocationId: number;  
     Address1: string;    
