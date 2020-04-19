@@ -77,13 +77,13 @@ jobs:
         run: npm clean-install
         working-directory: ${{ env.WORKING_DIRECTORY }}
       - if: github.event_name == 'pull_request'
-        name: npm_scan_external
+        name: npm_scan_pull_request
         run: npm run scan
         working-directory: ${{ env.WORKING_DIRECTORY }}
       - env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: github.event_name != 'pull_request'
-        name: npm_scan_internal
+        name: npm_scan
         run: npm run scan
         working-directory: ${{ env.WORKING_DIRECTORY }}
 
