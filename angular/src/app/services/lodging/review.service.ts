@@ -31,7 +31,7 @@ export class ReviewService {
   /**
    * Sends Review to lodging api to be updated.
    *
-   * @returns hotel that was updated
+   * @returns review that was updated
    */
   putReview(review: Review): Observable<Review> {
     return this.http.put<Review>(this.config.review.putReviewUrl, review);

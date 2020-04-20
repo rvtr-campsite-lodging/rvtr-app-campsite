@@ -4,6 +4,7 @@ export class Config{
         postHotelUrl: 'https://lodging/hotel/post',
         putHotelUrl: 'https://lodging/hotel/put',
         deleteHotelUrl: 'https://lodging/hotel/delete',
+        getRoomsOfTypeUrl: 'https://lodging/hotel/getRoomsOfType'
     };
 
     room = {
