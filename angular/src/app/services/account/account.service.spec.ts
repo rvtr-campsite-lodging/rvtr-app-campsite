@@ -9,11 +9,10 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { ConfigService } from '../config/config.service';
 import { Config } from 'src/app/data/config.model';
-import { Account } from 'src/app/data/account.model';
-import { of, asyncScheduler } from 'rxjs';
+import { asyncScheduler, scheduled } from 'rxjs';
 
 describe('AccountService', () => {
-  let configServiceStub = {
+  const configServiceStub = {
     get() {
       const config: Config = {
         api: {
@@ -23,7 +22,7 @@ describe('AccountService', () => {
         },
       };
 
-      return of(config, asyncScheduler);
+      return scheduled([config], asyncScheduler);
     },
   };
 
@@ -60,7 +59,7 @@ describe('AccountService', () => {
   }));
 
   it('should make get() request', fakeAsync(() => {
-    let actual: Account[] = [];
+    const actual: Account[] = [];
     let req: TestRequest;
 
     service.get().subscribe((res) => {
