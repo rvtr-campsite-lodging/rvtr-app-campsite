@@ -36,8 +36,8 @@ describe('LodgingService', () => {
     beforeEach(() => {
       lodgingService = TestBed.inject(LodgingService);
       expectedHotels = [
-        { hotelID: 1, description: 'A', type: ' ' },
-        { hotelID: 1, description: 'A', type: ' ' },
+        { hotelId: 1, description: 'A', type: ' ' },
+        { hotelId: 1, description: 'A', type: ' ' },
       ] as Hotel[];
     });
 
@@ -87,7 +87,7 @@ describe('LodgingService', () => {
   describe('#putHotel', () => {
     it('should update a hotel and return it', () => {
       const hotel: Hotel = {
-        hotelID: 1,
+        hotelId: 1,
         description: 'hotel 1',
         type: ' ',
         location: null,
@@ -117,7 +117,7 @@ describe('LodgingService', () => {
   describe('#postHotel', () => {
     it('should post a new hotel and return it', () => {
       const hotel: Hotel = {
-        hotelID: 1,
+        hotelId: 1,
         description: 'hotel 1',
         type: ' ',
         location: null,
@@ -147,7 +147,7 @@ describe('LodgingService', () => {
   describe('#deleteHotel', () => {
     it('should request deleteHotel and return hotel deleted', () => {
       const hotel: Hotel = {
-        hotelID: 1,
+        hotelId: 1,
         description: 'hotel 1',
         type: ' ',
         location: null,
