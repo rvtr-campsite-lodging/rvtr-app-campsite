@@ -1,3 +1,5 @@
+import { Name } from './name.model';
+
 /**
  * Represents the _Profile_ model
  *
@@ -8,7 +10,7 @@
  * phone: string;
  * ```
  */
-interface Profile {
+export class Profile {
   id: string;
   email: string;
   name: Name;

@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Config } from 'src/app/data/config.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ConfigService {
-  config: string = 'assets/config.json';
+  private config = 'assets/config.json';
 
   /**
    * Represents the _Config Service_ `constructor` method
-   * @param http
+   *
+   * @param http HttpClient
    */
   constructor(private http: HttpClient) {}
 
@@ -18,6 +19,6 @@ export class ConfigService {
    * Represents the _Config Service_ `get` method
    */
   get() {
-    return this.http.get(this.config);
+    return this.http.get<Config>(this.config);
   }
 }

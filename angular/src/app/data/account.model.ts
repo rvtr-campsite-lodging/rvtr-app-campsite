@@ -1,3 +1,7 @@
+import { Address } from './address.model';
+import { Payment } from './payment.model';
+import { Profile } from './profile.model';
+
 /**
  * Represents the _Account_ model
  *
@@ -9,10 +13,10 @@
  * profiles: Profile[];
  * ```
  */
-interface Account {
+export class Account {
   id: string;
   address: Address;
-  name?: string;
+  name: string;
   payments: Payment[];
   profiles: Profile[];
 }

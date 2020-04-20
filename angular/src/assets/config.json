@@ -1,5 +1,7 @@
 {
-  "accountApi": "",
-  "bookingApi": "",
-  "lodgingApi": ""
+  "api": {
+    "account": "",
+    "booking": "",
+    "lodging": ""
+  }
 }
