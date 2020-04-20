@@ -15,9 +15,43 @@ import { Observable } from 'rxjs';
 export class LodgingService {
 
   constructor(private http: HttpClient, private config: Config) { }
-  
-  get(): Observable<Hotel[]> {
+
+  /**
+   * Returns all the hotels from lodging api.
+   *
+   * @returns Observable array of Hotels
+   */
+  getHotels(): Observable<Hotel[]> {
     return this.http.get<Hotel[]>(this.config.lodging.getHotelUrl);
   }
-  
+
+  /**
+   * Sends Hotel to lodging api to be added.
+   *
+   * @returns hotel that was added
+   */
+  postHotel(hotel: Hotel): Observable<Hotel> {
+    return this.http.post<Hotel>(this.config.lodging.postHotelUrl, hotel);
+  }
+
+  /**
+   * Sends Hotel to lodging api to be updated.
+   *
+   * @returns hotel that was updated
+   */
+  putHotel(hotel: Hotel): Observable<Hotel> {
+    return this.http.put<Hotel>(this.config.lodging.putHotelUrl, hotel);
+  }
+
+  /**
+   * Delete hotel from lodging api.
+   *
+   * @returns hotel that was deleted
+   */
+  deleteHotel(id: number): Observable<Hotel> {
+    const url = `${this.config.lodging.deleteHotelUrl}/${id}`;
+
+    return this.http.delete<Hotel>(url);
+  }
+
 }
