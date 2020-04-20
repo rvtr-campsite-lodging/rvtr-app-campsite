@@ -16,9 +16,7 @@ export class AccountService {
    * @param config ConfigService
    * @param http HttpClient
    */
-  constructor(private config: ConfigService, private http: HttpClient) {
-    config.get().subscribe((cfg) => (this.api = cfg.api.account));
-  }
+  constructor(private config: ConfigService, private http: HttpClient) {}
 
   /**
    * Represents the _Account Service_ `delete` method
@@ -26,14 +24,28 @@ export class AccountService {
    * @param id string
    */
   delete(id: string): Observable<boolean> {
-    return this.http.delete<boolean>(this.api, { params: { id } });
+    return new Observable<boolean>((subscriber) => {
+      this.config.get().subscribe((config) => {
+        this.http
+          .delete<boolean>(config.api.account, { params: { id } })
+          .subscribe((res) => {
+            subscriber.next(res);
+          });
+      });
+    });
   }
 
   /**
    * Represents the _Account Service_ `get` method
    */
   get(): Observable<Account[]> {
-    return this.http.get<Account[]>(this.api);
+    return new Observable<Account[]>((subscriber) => {
+      this.config.get().subscribe((cfg) => {
+        this.http.get<Account[]>(cfg.api.account).subscribe((res) => {
+          subscriber.next(res);
+        });
+      });
+    });
   }
 
   /**
