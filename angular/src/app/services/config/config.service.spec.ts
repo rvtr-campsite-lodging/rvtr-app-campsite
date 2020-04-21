@@ -9,6 +9,14 @@ import {
 import { HttpClient } from '@angular/common/http';
 
 describe('ConfigService', () => {
+  const configMock: Config = {
+    api: {
+      account: null,
+      booking: null,
+      lodging: null,
+    },
+  };
+
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
   let service: ConfigService;
@@ -16,7 +24,6 @@ describe('ConfigService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      providers: [Config],
     });
 
     httpClient = TestBed.inject(HttpClient);
@@ -29,22 +36,14 @@ describe('ConfigService', () => {
   });
 
   it('should support have a get() method', () => {
-    const expected: Config = {
-      api: {
-        account: null,
-        booking: null,
-        lodging: null,
-      },
-    };
-
     let req: TestRequest;
 
     service.get().subscribe((res) => {
-      expect(res).toBe(expected);
+      expect(res).toBe(configMock);
     });
 
     req = httpTestingController.expectOne('assets/config.json');
 
-    req.flush(expected);
+    req.flush(configMock);
   });
 });

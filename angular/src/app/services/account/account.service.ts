@@ -1,13 +1,15 @@
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { concatMap, map } from 'rxjs/operators';
 import { ConfigService } from '../config/config.service';
+import { Account } from 'src/app/data/account.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AccountService {
-  api: string;
+  private readonly apiUrl$: Observable<string>;
 
   /**
    * Represents the _Account Service_ `constructor` method
@@ -15,7 +17,9 @@ export class AccountService {
    * @param config ConfigService
    * @param http HttpClient
    */
-  constructor(private config: ConfigService, private http: HttpClient) {}
+  constructor(private readonly config: ConfigService, private readonly http: HttpClient) {
+    this.apiUrl$ = config.get().pipe(map((cfg) => cfg.api.account));
+  }
 
   /**
    * Represents the _Account Service_ `delete` method
@@ -23,37 +27,19 @@ export class AccountService {
    * @param id string
    */
   delete(id: string): Observable<boolean> {
-    return new Observable<boolean>((subscriber) => {
-      this.config.get().subscribe((config) => {
-        this.http
-          .delete<boolean>(config.api.account, { params: { id } })
-          .subscribe((res) => {
-            subscriber.next(res);
-          });
-      });
-    });
+    return this.apiUrl$.pipe(
+      concatMap((url) => this.http.delete<boolean>(url, { params: { id } }))
+    );
   }
 
   /**
    * Represents the _Account Service_ `get` method
-   */
-  get(): Observable<Account[]> {
-    return new Observable<Account[]>((subscriber) => {
-      this.config.get().subscribe((cfg) => {
-        this.http.get<Account[]>(cfg.api.account).subscribe((res) => {
-          subscriber.next(res);
-        });
-      });
-    });
-  }
-
-  /**
-   * Represents the _Account Service_ `getOne` method
    *
    * @param id string
    */
-  getOne(id: string): Observable<Account> {
-    return this.http.get<Account>(this.api, { params: { id } });
+  get(id?: string): Observable<Account[]> {
+    const options = id ? { params: new HttpParams().set('id', id) } : {};
+    return this.apiUrl$.pipe(concatMap((url) => this.http.get<Account[]>(url, options)));
   }
 
   /**
@@ -62,7 +48,7 @@ export class AccountService {
    * @param account Account
    */
   post(account: Account): Observable<boolean> {
-    return this.http.post<boolean>(this.api, account);
+    return this.apiUrl$.pipe(concatMap((url) => this.http.post<boolean>(url, account)));
   }
 
   /**
@@ -71,6 +57,6 @@ export class AccountService {
    * @param account Account
    */
   put(account: Account): Observable<Account> {
-    return this.http.put<Account>(this.api, account);
+    return this.apiUrl$.pipe(concatMap((url) => this.http.put<Account>(url, account)));
   }
 }
