@@ -13,7 +13,7 @@ import { Profile } from './profile.model';
  * profiles: Profile[];
  * ```
  */
-export interface Account {
+export class Account {
   id: string;
   address: Address;
   name: string;

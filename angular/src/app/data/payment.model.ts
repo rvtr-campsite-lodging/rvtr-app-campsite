@@ -8,7 +8,7 @@
  * cardNumber: string;
  * ```
  */
-export interface Payment {
+export class Payment {
   id: string;
   cardExpirationDate: string;
   cardName: string;

@@ -5,7 +5,7 @@
  * api: object;
  * ```
  */
-export interface Config {
+export class Config {
   api: {
     account: string;
     booking: string;

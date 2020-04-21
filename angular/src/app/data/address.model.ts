@@ -10,7 +10,7 @@
  * street: string;
  * ```
  */
-export interface Address {
+export class Address {
   id: string;
   city: string;
   country: string;
