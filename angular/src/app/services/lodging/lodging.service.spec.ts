@@ -45,8 +45,8 @@ describe('LodgingService', () => {
       httpTestingController.verify();
     });
 
-    let roomStub = roomServiceStub.get();
-    let roomsStub = [roomStub];
+    const roomStub = roomServiceStub.get();
+    const roomsStub = [roomStub];
 
     describe('#getHotels', () => {
       let expectedHotels: Hotel[];

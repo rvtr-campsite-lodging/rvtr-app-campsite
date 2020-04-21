@@ -35,26 +35,26 @@ describe('LocationService', () => {
       locationService = TestBed.inject(LocationService);
       expectedLocations = [
         {
-          LocationId: 1,
-          Address1: 'street1',
-          Address2: 'street2',
-          City: 'city1',
-          State: 'state1',
-          Zip: 'zip1',
-          Latitude: 1,
-          Longitude: 1,
-          CultureInfo: 'info1',
+          locationId: 1,
+          address1: 'street1',
+          address2: 'street2',
+          city: 'city1',
+          state: 'state1',
+          zip: 'zip1',
+          latitude: 1,
+          longitude: 1,
+          cultureInfo: 'info1',
         },
         {
-          LocationId: 2,
-          Address1: 'street3',
-          Address2: 'street4',
-          City: 'city2',
-          State: 'state2',
-          Zip: 'zip2',
-          Latitude: 2,
-          Longitude: 2,
-          CultureInfo: 'info2',
+          locationId: 2,
+          address1: 'street3',
+          address2: 'street4',
+          city: 'city2',
+          state: 'state2',
+          zip: 'zip2',
+          latitude: 2,
+          longitude: 2,
+          cultureInfo: 'info2',
         },
       ] as Location[];
     });
@@ -78,15 +78,15 @@ describe('LocationService', () => {
   describe('#putLocation', () => {
     it('should update a location and return it', () => {
       const location: Location = {
-        LocationId: 1,
-        Address1: '555 Foo Way',
-        Address2: null,
-        City: 'Bar',
-        State: 'Tx',
-        Zip: '000000',
-        Latitude: null,
-        Longitude: null,
-        CultureInfo: null,
+        locationId: 1,
+        address1: '555 Foo Way',
+        address2: null,
+        city: 'Bar',
+        state: 'Tx',
+        zip: '000000',
+        latitude: null,
+        longitude: null,
+        cultureInfo: null,
       };
 
       locationService
@@ -109,15 +109,15 @@ describe('LocationService', () => {
   describe('#postLocation', () => {
     it('should post a new location and return it', () => {
       const location: Location = {
-        LocationId: 1,
-        Address1: '555 Foo Way',
-        Address2: null,
-        City: 'Bar',
-        State: 'Tx',
-        Zip: '000000',
-        Latitude: null,
-        Longitude: null,
-        CultureInfo: null,
+        locationId: 1,
+        address1: '555 Foo Way',
+        address2: null,
+        city: 'Bar',
+        state: 'Tx',
+        zip: '000000',
+        latitude: null,
+        longitude: null,
+        cultureInfo: null,
       };
       locationService
         .postLocation(location)
@@ -139,15 +139,15 @@ describe('LocationService', () => {
   describe('#deleteLocation', () => {
     it('should request deleteLocation and return the location deleted', () => {
       const location: Location = {
-        LocationId: 0,
-        Address1: '555 Foo Way',
-        Address2: null,
-        City: 'Bar',
-        State: 'Tx',
-        Zip: '000000',
-        Latitude: null,
-        Longitude: null,
-        CultureInfo: null,
+        locationId: 0,
+        address1: '555 Foo Way',
+        address2: null,
+        city: 'Bar',
+        state: 'Tx',
+        zip: '000000',
+        latitude: null,
+        longitude: null,
+        cultureInfo: null,
       };
       locationService
         .deleteLocation(0)
@@ -157,7 +157,7 @@ describe('LocationService', () => {
           fail
         );
 
-      const req = httpTestingController.expectOne(config.location.deleteLocationUrl+'/0');
+      const req = httpTestingController.expectOne(config.location.deleteLocationUrl + '/0');
       expect(req.request.method).toEqual('DELETE');
 
       req.flush(location);

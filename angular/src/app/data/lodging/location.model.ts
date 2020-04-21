@@ -1,15 +1,27 @@
 /**
-represnts a location object. 
-LocationId - Location Identifier, CultureInfo - Culture info for localiztion
-**/
-export class Location{
-    LocationId: number;  
-    Address1: string;    
-    Address2: string;    
-    City: string;        
-    State: string;       
-    Zip: string;         
-    Latitude: number;    
-    Longitude: number;   
-    CultureInfo: string; 
-  }
+ * represents a location object.
+ *
+ * ```yaml
+ * locationId: number;
+ * locationId: number;
+ * address1: string;
+ * address2: string;
+ * city: string;
+ * state: string;
+ * zip: string;
+ * latitude: number;
+ * longitude: number;
+ * cultureInfo: string;
+ * ```
+ */
+export class Location {
+  locationId: number;
+  address1: string;
+  address2: string;
+  city: string;
+  state: string;
+  zip: string;
+  latitude: number;
+  longitude: number;
+  cultureInfo: string;
+}

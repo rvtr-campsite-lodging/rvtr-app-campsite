@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Location } from "src/app/data/lodging/location.model";
+import { Location } from 'src/app/data/lodging/location.model';
 import { Config } from './config';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LocationService {
-
-  constructor(private http: HttpClient, private config: Config) { }
+  constructor(private http: HttpClient, private config: Config) {}
 
   /**
    * Returns all the locations from the location api.
@@ -23,7 +22,8 @@ export class LocationService {
   /**
    * Sends Location to the location api to be added.
    *
-   * @returns location that was added
+   * @param location Location
+   * @returns Obervable<Location>
    */
   postLocation(location: Location): Observable<Location> {
     return this.http.post<Location>(this.config.location.postLocationUrl, location);
@@ -32,6 +32,7 @@ export class LocationService {
   /**
    * Sends Location to the location api to be updated.
    *
+   * @param location Location
    * @returns location that was updated
    */
   putLocation(location: Location): Observable<Location> {
@@ -41,6 +42,7 @@ export class LocationService {
   /**
    * Delete Location from the location api.
    *
+   * @param id number
    * @returns location that was deleted
    */
   deleteLocation(id: number): Observable<Location> {
@@ -48,5 +50,4 @@ export class LocationService {
 
     return this.http.delete<Location>(url);
   }
-
 }

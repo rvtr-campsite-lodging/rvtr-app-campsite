@@ -106,7 +106,7 @@ describe('RoomService', () => {
         expect(data).toBe(room);
       });
 
-      const req = httpTestingController.expectOne(config.room.deleteRoomUrl+'/0');
+      const req = httpTestingController.expectOne(config.room.deleteRoomUrl + '/0');
       expect(req.request.method).toEqual('DELETE');
 
       const expectedResponse = new HttpResponse({ status: 200, statusText: 'OK', body: room });

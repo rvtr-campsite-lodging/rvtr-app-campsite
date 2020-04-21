@@ -93,13 +93,14 @@ describe('ReviewService', () => {
         hotelId: 1,
         rating: 3,
         content: '',
-        date: null
+        date: null,
       };
 
       reviewService
         .postReview(review)
         .subscribe(
-          (reviewReturned) => expect(reviewReturned).toEqual(review, 'should return the review added'),
+          (reviewReturned) =>
+            expect(reviewReturned).toEqual(review, 'should return the review added'),
           fail
         );
 
@@ -122,14 +123,14 @@ describe('ReviewService', () => {
         hotelId: 1,
         rating: 3,
         content: '',
-        date: null
-       };
+        date: null,
+      };
 
       reviewService.deleteReview(3).subscribe((data: any) => {
         expect(data).toBe(review);
       });
 
-      const req = httpTestingController.expectOne(config.review.deleteReviewUrl+'/3');
+      const req = httpTestingController.expectOne(config.review.deleteReviewUrl + '/3');
       expect(req.request.method).toEqual('DELETE');
 
       const expectedResponse = new HttpResponse({ status: 200, statusText: 'OK', body: review });
