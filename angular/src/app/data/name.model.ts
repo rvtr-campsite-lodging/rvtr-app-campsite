@@ -7,7 +7,7 @@
  * given: string;
  * ```
  */
-export class Name {
+export interface Name {
   id: string;
   family: string;
   given: string;

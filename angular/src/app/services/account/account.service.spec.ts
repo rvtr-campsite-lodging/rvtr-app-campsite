@@ -9,7 +9,7 @@ import {
 import { HttpClient } from '@angular/common/http';
 import { ConfigService } from '../config/config.service';
 import { Config } from 'src/app/data/config.model';
-import { Account } from 'src/app/data/account.model';
+import { Account } from '../../data/account.model';
 import { asyncScheduler, scheduled } from 'rxjs';
 
 describe('AccountService', () => {

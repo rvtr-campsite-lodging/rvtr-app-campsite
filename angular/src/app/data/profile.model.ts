@@ -10,7 +10,7 @@ import { Name } from './name.model';
  * phone: string;
  * ```
  */
-export class Profile {
+export interface Profile {
   id: string;
   email: string;
   name: Name;
