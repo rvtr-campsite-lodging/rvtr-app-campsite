@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Location } from 'src/app/data/lodging/location.model';
+import { Location } from '../../data/lodging/location.model';
 import { Config } from './config';
 import { Observable } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class LocationService {
-  constructor(private http: HttpClient, private config: Config) {}
+  constructor(readonly http: HttpClient, readonly config: Config) {}
 
   /**
    * Returns all the locations from the location api.

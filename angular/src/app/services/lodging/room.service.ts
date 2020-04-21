@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Room } from 'src/app/data/lodging/room.model';
 import { Config } from './config';
 import { Observable } from 'rxjs';
+import { Room } from '../../data/lodging/room.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RoomService {
-  constructor(private http: HttpClient, private config: Config) {}
+  constructor(readonly http: HttpClient, readonly config: Config) {}
 
   /**
    * Returns all the rooms from lodging api.

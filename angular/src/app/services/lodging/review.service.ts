@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Review } from 'src/app/data/lodging/review.model';
+import { Review } from '../../data/lodging/review.model';
 import { Config } from './config';
 import { Observable } from 'rxjs';
 
@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ReviewService {
-  constructor(private http: HttpClient, private config: Config) {}
+  constructor(readonly http: HttpClient, readonly config: Config) {}
 
   /**
    * Returns all the reviews from lodging api.
