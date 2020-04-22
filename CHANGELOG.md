@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning][semver].
 ### added
 
 - setup the project directory structure
+- design and launch the account model
 
 ### fixed
 
