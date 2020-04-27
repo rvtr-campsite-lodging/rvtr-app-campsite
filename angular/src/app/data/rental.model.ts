@@ -13,4 +13,5 @@ export interface Rental {
   id: string;
   name: string;
   rentalUnit: RentalUnit;
+  images: string[];
 }

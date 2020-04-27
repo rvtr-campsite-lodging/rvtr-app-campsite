@@ -1,0 +1,7 @@
+<h3>Rentals</h3>
+
+<ul>
+  <li *ngFor="let rental of rentals" (click)="selectRental(rental)">
+    {{rental.name}}
+  </li>
+</ul>

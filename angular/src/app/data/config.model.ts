@@ -13,6 +13,9 @@ export interface Config {
     account: string;
     booking: string;
     lodging: string;
+    review: string;
+    rentalUnit: string;
+    rental: string;
   };
   navigation: {
     footer: Link[];

@@ -1,0 +1,26 @@
+[{
+	"id": 1,
+	"location": null,
+	"name": "Hilton",
+	"rentals": null,
+	"reviews": null,
+	"images": [ "123456.png", "abcdef.jpg", "FANTASTIC.png" ]
+},
+{
+	"id": 2,
+	"location": null,
+	"name": "Ritz-Carlton",
+	"rentals": null,
+	"reviews": null,
+	"images": [ "123456.png", "abcdef.jpg", "helpMePls.png" ]
+},
+{
+	"id": 3,
+	"location": null,
+	"name": "Super8",
+	"rentals": null,
+	"reviews": null,
+	"images": [ "123456.png", "abcdef.jpg", "helpMePls.png" ]
+}
+]
+

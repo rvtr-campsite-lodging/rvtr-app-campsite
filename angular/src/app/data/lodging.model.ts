@@ -19,4 +19,5 @@ export interface Lodging {
   name: string;
   rentals: Rental[];
   reviews: Review[];
+  images: string[];
 }

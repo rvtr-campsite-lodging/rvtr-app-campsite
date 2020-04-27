@@ -1,0 +1,25 @@
+[{
+    "id": 1,
+    "bathrooms": null,
+    "bedrooms": null,
+    "name": "Test1",
+    "occupancy":"",
+    "type": ""
+  },
+  {
+    "id": 2,
+    "bathrooms": null,
+    "bedrooms": null,
+    "name": "Test2",
+    "occupancy":"",
+    "type": ""
+  },
+  {
+    "id": 3,
+    "bathrooms": null,
+    "bedrooms": null,
+    "name": "Test3",
+    "occupancy":"",
+    "type": ""
+  }
+]

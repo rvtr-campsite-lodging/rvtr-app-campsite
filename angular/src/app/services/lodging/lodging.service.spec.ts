@@ -19,6 +19,7 @@ describe('LodgingService', () => {
       name: null,
       rentals: [],
       reviews: [],
+      images: []
     },
   ];
 
@@ -29,6 +30,10 @@ describe('LodgingService', () => {
           account: null,
           booking: null,
           lodging: 'test',
+          review: null,
+          rentalUnit: null,
+          rental: null
+
         },
         navigation: null,
       };
