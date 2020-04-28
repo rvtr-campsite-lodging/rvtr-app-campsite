@@ -1,13 +1,9 @@
 <h3>RENTAL-UNIT</h3>
 
-<ul>
-  <li *ngFor="let rentalUnit of rentalUnit">
-    <p> {{ rentalUnit.id }} </p>
-    <p> {{ rentalUnit.bathrooms }} </p>
-    <p> {{ rentalUnit.bedrooms }} </p>
-    <p> {{ rentalUnit.name }} </p>
-    <p> {{ rentalUnit.occupancy }} </p>
-    <p> {{ rentalUnit.type }} </p>
-  </li>
-</ul>
+<h2>Details for {{ rental?.name }}</h2>
 
+<h1> {{ rentalUnit?.name }} </h1>
+<p>Bathrooms: {{ rentalUnit?.bathrooms }} </p>
+<p>Bedrooms: {{ rentalUnit?.bedrooms }} </p>
+<p>Occupancy: {{ rentalUnit?.occupancy }} </p>
+<p> {{ rentalUnit?.type }} </p>

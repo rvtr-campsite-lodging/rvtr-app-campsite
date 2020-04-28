@@ -2,7 +2,10 @@
   "api": {
     "account": "",
     "booking": "",
-    "lodging": ""
+    "lodging": "/assets/lodging.json",
+    "rental": "/assets/rental.json",
+    "rentalUnit": "/assets/rental-unit.json",
+    "review": "/assets/review.json"
   },
   "navigation": {
     "footer": [

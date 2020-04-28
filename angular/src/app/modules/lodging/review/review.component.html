@@ -1,9 +1,10 @@
 <h3>REVIEWS</h3>
+<h2>Reviews for {{ lodging?.name}}</h2>
 <ul>
-  <li *ngFor="let review of reviews">
-      <p>{{review.comment}}</p>
-      <p>{{review.dateCreated}}</p>
-      <p>{{review.rating}}</p>
+  <li class="review" *ngFor="let review of reviews">
+      <p>{{review?.comment}}</p>
+      <p>{{review?.dateCreated}}</p>
+      <p>{{review?.rating}}</p>
   </li>
 </ul>
 

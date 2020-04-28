@@ -15,6 +15,6 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     LodgingRoutingModule,
     HttpClientModule,
-  ]
+  ],
 })
 export class LodgingModule { }

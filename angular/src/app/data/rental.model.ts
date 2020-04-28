@@ -7,6 +7,7 @@ import { RentalUnit } from './rental-unit.model';
  * id: string;
  * name: string;
  * rentalUnit: RentalUnit;
+ * images: string[];
  * ```
  */
 export interface Rental {
@@ -14,4 +15,6 @@ export interface Rental {
   name: string;
   rentalUnit: RentalUnit;
   images: string[];
+  lodgingId: string;
+  rentalUnitId: string;
 }

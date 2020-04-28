@@ -1,7 +1,23 @@
-<h3>Rentals</h3>
+<!-- <nav>
+  <div>
+    <a href=# [routerLink]="['/lodging']" routerLinkActive="active">Lodgings</a>
+    <a href=# [routerLink]="['/lodging/rental']" routerLinkActive="active">Rentals</a>
+  </div>
+</nav> -->
 
-<ul>
-  <li *ngFor="let rental of rentals" (click)="selectRental(rental)">
-    {{rental.name}}
+<h2 style="text-align: center;"> Rentals for {{ lodging?.name }} </h2>
+
+<ul style="text-align:center">
+  <li class="rental" *ngFor="let rental of rentals">
+    <p><a routerLink="/lodging/rentalUnit/{{rental.id}}" routerLinkActive="active">{{ rental?.name }}</a></p>
+    <p>
+      <a routerLink="/lodging/rentalUnit/{{rental.id}}">
+       <img [src]="rental.images" height="400" width="400">
+      </a>
+    </p>
   </li>
 </ul>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

@@ -1,23 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { LodgingService } from 'src/app/services/lodging/lodging.service';
 import { Lodging } from 'src/app/data/lodging.model';
-import sampleData from './lodging-example.json';
-
 
 @Component({
   selector: 'uic-lodging',
   templateUrl: './lodging.component.html',
-  styleUrls: ['./lodging.component.scss']
+  styleUrls: ['./lodging.component.scss'],
 })
 export class LodgingComponent implements OnInit {
-  lodging: any = sampleData;
-  lodgings = sampleData;
+  lodgings:   Lodging[] = [];
 
-  constructor(private lodgingService: LodgingService) { }
+  constructor(private lodgingService: LodgingService) {}
 
   ngOnInit(): void {
-    this.lodgingService.get().subscribe(data => {
-      this.lodgings.push(data);
-    });
+    this.get();
+  }
+
+  get(): void {
+    this.lodgingService.get().subscribe(lodgings => this.lodgings = lodgings);
+  }
+
+  trackByLodgingId(index: number, lodging: any){
+    return lodging.id;
   }
 }

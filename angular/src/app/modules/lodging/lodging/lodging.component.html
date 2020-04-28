@@ -1,12 +1,27 @@
-<h3>LODGINGS</h3>
-<div class = "lodging">
+<nav>
+    <!-- <div>
+      <a href=# [routerLink]="['/lodging']" routerLinkActive="active">Lodgings</a>
+      <a href=# [routerLink]="['/lodging/rental']" routerLinkActive="active">Rentals</a>
+    </div> -->
+</nav>
+
+<h2 style="text-align:center">LODGINGS</h2>
+
+<div style="text-align:center">
   <ul>
-    <li *ngFor="let lodging of lodgings">
-      <p> {{ lodging.name }} </p>
+    <li class="lodging" *ngFor="let lodging of lodgings">
+      <p> <a routerLink="/lodging/rental/{{lodging.id}}" routerLinkActive="active"> {{ lodging.name }} </a></p>
+      <p> <a routerLink="/lodging/review/{{lodging.id}}" routerLinkActive="active"> Reviews </a> </p>
       <p> {{ lodging.location }} </p>
       <p> {{ lodging.rentals }} </p>
-      <p> {{ lodging.images }} </p>
-      <p> {{ lodging.reviews }} </p>
+      <a routerLink="/lodging/rental/{{lodging.id}}" routerLinkActive="active">
+        <img [src]="lodging.images" height="400" width="400">
+      </a>
+
     </li>
   </ul>
+</div>
+
+<div>
+  <router-outlet></router-outlet>
 </div>

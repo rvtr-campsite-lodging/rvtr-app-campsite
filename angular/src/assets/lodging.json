@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "location": null,
+      "name": "Hilton",
+      "rentals": null,
+      "reviews": null,
+      "images": [ "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80",
+        "abcdef.jpg", "FANTASTIC.png" ]
+    },
+    {
+      "id": 2,
+      "location": null,
+      "name": "Ritz-Carlton",
+      "rentals": null,
+      "reviews": null,
+      "images": [ "https://pix10.agoda.net/hotelImages/109/109040/109040_16102017280047979056.jpg?s=1024x768", "abcdef.jpg", "helpMePls.png" ]
+    },
+    {
+      "id": 3,
+      "location": null,
+      "name": "Super8",
+      "rentals": null,
+      "reviews": null,
+      "images": [ "https://www.visitevansville.com/sites/default/files/styles/primary_image_alt/public/content/accomodation/accommodation_48.?itok=S1aAt3ox", "abcdef.jpg", "helpMePls.png" ]
+    }
+  ]

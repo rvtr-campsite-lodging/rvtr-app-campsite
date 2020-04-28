@@ -59,4 +59,10 @@ export class RentalService {
   put(rental: Rental): Observable<Rental> {
     return this.apiUrl$.pipe(concatMap((url) => this.http.put<Rental>(url, rental)));
   }
+
+  // Get rentals by lodging (url/rentals?lodgingId=...)
+  getByLodging(id?: string): Observable<Rental[]> {
+    const options = id ? { params: new HttpParams().set('lodgingId', id) } : {};
+    return this.apiUrl$.pipe(concatMap((url) => this.http.get<Rental[]>(url, options)));
+  }
 }

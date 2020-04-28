@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "accountId": "1",
+    "hotelId": "1",
+    "comment": "best hotel",
+    "dateCreated": null,
+    "rating": 4
+  },
+  {
+    "id": "4",
+    "accountId": "1",
+    "hotelId": "1",
+    "comment": "good hotel",
+    "dateCreated": null,
+    "rating": 5
+  },
+  {
+    "id": "2",
+    "accountId": "2",
+    "hotelId": "2",
+    "comment": "worst hotel",
+    "dateCreated": null,
+    "rating": 1
+  },
+  {
+    "id": "3",
+    "accountId": "3",
+    "hotelId": "3",
+    "comment": "not bad",
+    "dateCreated": null,
+    "rating": 3
+  }
+]

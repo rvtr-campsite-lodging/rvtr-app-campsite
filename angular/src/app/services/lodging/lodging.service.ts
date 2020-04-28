@@ -42,6 +42,16 @@ export class LodgingService {
     return this.apiUrl$.pipe(concatMap((url) => this.http.get<Lodging[]>(url, options)));
   }
 
+    /**
+   * Represents the _Lodging Service_ `get` method
+   *
+   * @param id string
+   */
+  getAllByCity(city: string, state: string): Observable<Lodging[]> {
+    const options =  { params: new HttpParams().set('city', city).set('state', state) } ;
+    return this.apiUrl$.pipe(concatMap((url) => this.http.get<Lodging[]>(url, options)));
+  }
+
   /**
    * Represents the _Lodging Service_ `post` method
    *

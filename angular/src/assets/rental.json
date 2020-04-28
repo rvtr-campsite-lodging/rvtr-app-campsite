@@ -1,0 +1,34 @@
+[
+    {
+      "id": 1,
+      "name": "Rental1",
+      "rentalUnit": null,
+      "images": ["https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"],
+      "lodgingId": 1,
+      "rentalUnitId": 1
+    },
+    {
+      "id": 2,
+      "name": "Rental2",
+      "rentalUnit": null,
+      "images": ["https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"],
+      "lodgingId": 2,
+      "rentalUnitId": 2
+    },
+    {
+      "id": 3,
+      "name": "Rental3",
+      "rentalUnit": null,
+      "images": ["https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"],
+      "lodgingId": 3,
+      "rentalUnitId": 3
+    },
+    {
+      "id": 4,
+      "name": "Rental4",
+      "rentalUnit": null,
+      "images": ["https://images.pexels.com/photos/1579253/pexels-photo-1579253.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"],
+      "lodgingId": 1,
+      "rentalUnitId": 1
+    }
+  ]
